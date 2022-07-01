@@ -21,7 +21,7 @@ h1{
 }
 
 .wrapper {
-    max-width: 405px;
+    max-width: 425px;
     margin: 35px auto;
     border: 2px solid #ccc;
     background: #999;
@@ -31,46 +31,54 @@ h1{
 
 .task-input {
     outline: none;
-    width: 450px;
     height: 52px;
     padding: 0 25px;
     position: relative;
+    margin-bottom: 50px;
 }
 
 .task-input input {
-    height: 100%;
+    height: 52px;
+    width: 350px;
     outline: none;
     font-size: 18px;
     border-radius: 5px;
     border: none;
     padding: 0 13px 0 13px;
     position: relative;
+    margin-bottom: 20px;
 }
 
 .task-input input::placeholder {
     color: #bfbfbf;
 }
 
-.task-input #due-date{
-    width: 28%;
+.task-input .date{
+    width: 150px;
+    height: 50%;
     cursor: pointer;
     border-radius: 5px;
-    font-size: 18px;
-    padding: 0 25px;
+    font-size: 14px;
+    outline: none;
 }
 
 .task-input .task-btn {
-    height: 35px;
+    outline: none;
+    width: 70px;
+    height: 50%;
     background: #3c87ff;
     color: #fff;
     cursor: pointer;
-    font-size: 13px;
-    border-radius: 7px;
+    font-size: 8px;
+    border-radius: 5px;
     border: none;
-    margin: 6px 0;
+    margin-left: 10px;
+    padding: -3px 13px;
+    
 }
 
 .controls,li {
+   
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -78,7 +86,8 @@ h1{
 
 .controls {
     margin: 20px auto;
-    padding: 25px 20px;
+    padding: 18px 25px;
+    border-top: 1px solid #ccc;
     border-bottom: 1px solid #ccc;
 }
 
@@ -110,7 +119,6 @@ h1{
 .task-box {
     max-width: 405px;
     margin: auto;
-    padding: 28px 0;
 }
 
 .task-box .task {
@@ -118,7 +126,6 @@ h1{
     font-size: 17px;
     margin-bottom: 2px;
     padding: 14px;
-    border-bottom: 1px solid #ccc;
     border: 1px #fff solid;
     border-radius: 7px;
     background: #fff;
@@ -190,45 +197,46 @@ h1{
 }
 
 /*Media Queries*/
-/*code for mobile devices smaller that 600px*/
-@media only screen and (max-width:600px){
+/*code for mobile devices smaller that 480px*/
+@media only screen and (max-width:480px){
     div{
       max-width: 100%;
-      font-size: 12px;
+      height: 100%;
+      font-size: 9px;
     }
-    
+    controls{
+        max-width: 100%;
+        font-size: 9px;
+    }
   }
   
   /*Medium devices(tablets, 768px)*/
   @media only screen and (max-width:768px){
-    div{
+    wrapper{
      max-width: 100%;
+     height: 100%;
+     font-size: 9px;
     }
-    .col-sm-6{
-      max-width: 100%;
+    controls{
+        max-width: 100%;
+        font-size: 9px;
     }
-    
   }
   
   /*Large devices(laptops,992px and up)*/
-  @media only screen and (max-width:992px){
-    div{
-      max-width: 100%;
-    }
-    .col-sm-6{
-      max-width: 100%;
-    }
-    
-  }
-  
   @media only screen and (max-width:1024px){
-    div{
+    wrapper{
       max-width: 100%;
+      height: 100%;
+      font-size: 9px;
     }
-    .col-sm-6{
-      max-width: 100%;
-    }
-    
   }
   
+  @media only screen and (max-width:1200px){
+    wrapper{
+      max-width: 100%;
+      height: 100%;
+      font-size: 9px;
+    } 
+  }
   
