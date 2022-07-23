@@ -20,7 +20,7 @@ h1{
 
 }
 
-.wrapper {
+section {
     max-width: 425px;
     margin: 35px auto;
     border: 2px solid #ccc;
@@ -65,7 +65,7 @@ h1{
 .task-input .task-btn {
     outline: none;
     width: 70px;
-    height: 50%;
+    height: 100%;
     background: #3c87ff;
     color: #fff;
     cursor: pointer;

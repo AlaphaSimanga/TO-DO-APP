@@ -93,12 +93,19 @@ const updateStatus = function (selectedTask) {
     localStorage.setItem("todo-list", JSON.stringify(todos));
 }
 
-
 function taskAdd() {
     let taskField = document.getElementById("newTask");
     let inputDate = document.getElementById("due-date").value;
     const taskItem = document.createElement("p");
     let userTask = taskInput.value.trim();
+
+    //form validation, if a form field (task) is empty a function alerts a message, and returns false, to prevent the form from being submitted
+    let x = document.forms["myForm"]["task"].value;
+    if (x == "") {
+        alert("Please enter a valid task");
+        return false;
+    }
+
     if (userTask) {
         if (!isEditedTask) {   //If is editedTask is not true
             if (!todos) {      //if todos doesn't exist, pass an empty array to todos
@@ -124,7 +131,35 @@ function taskAdd() {
         showTodo("all");
 
     }
+
     let addtoTasks = document.createTextNode(taskField);
     taskItem.appendChild(addtoTasks);
-
 }
+
+//Disable past dates in input type date using Jquery
+$(document).ready(function () {
+    var dateToday = new Date();
+
+    var month = dateToday.getMonth() + 1;
+    var day = dateToday.getDate();
+    var year = dateToday.getFullYear();
+
+    if (month < 10)
+        month = '0' + month.toString();
+    if (day < 10)
+        day = '0' + day.toString();
+
+    var maxDate = year + '-' + month + '-' + day;
+    $('#due-date').attr('min', maxDate);
+})
+
+//Sort tasks alphabetically when you refresh the page after adding each task
+const sortusers = todos.sort(function (a, b) {
+    var a = a.name;
+    var b = b.name;
+    if (a < b) return -1;
+    else if (a > b) return 1;
+    return 0;
+});
+console.log(sortusers);
+
